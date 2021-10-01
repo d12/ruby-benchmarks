@@ -25,7 +25,7 @@ One of the biggest challenges in writing the benchmarks was trying to create ben
 - Iterators and blocks didn't exist originally, so I iterated using a while loop.
 - There wasn't a way (that I could find) to get ms-precise time in Ruby.
 
-For the time point, I'm pretty sure I'm missing something since the `Time.now` method existed from 0.49, but `Time.now.to_f` returned an error with no information. Probably no `to_f` method on a time instance but it's difficult to debug since even basic things like `#methods` or `#class` didn't work in 0.49.
+For the time point, I'm pretty sure I'm missing something since the `Time.now` method existed from 0.49, but `Time.now.to_f` returned an error with no information. Probably no `to_f` method on a time instance but it's difficult to debug since even basic things like `#methods` or `#class` didn't work in 0.49, and I was never able to find documentation for Ruby 0.49.
 
 What I ended up doing was shelling out to the shell to print ms-precise time using `date`, and then reading that into Ruby. Backticks or any way to recieve stdout from the shell didn't exist in 0.49 so I wrote to a file and then read the file from Ruby. There's a small amount of overhead in this approach but I measured it to be neglible.
 
