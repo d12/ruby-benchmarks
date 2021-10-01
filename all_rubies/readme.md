@@ -40,7 +40,7 @@ From there, I wrote a `average_out_results.rb` script in the results/ dir which 
 - Ruby 0.49 was _really_ slow in most benchmarks, except string concat for some reason.
 - Ruby 2.0.0 improved almost every benchmark by a huge amount. It was probably the single biggest perf upgrade Ruby has ever had.
 - Reading from a large hash got almost 3x slower after 2.4.0 and hasn't recovered since. I'm planning on digging into this one some more. There was a big HashTable refactor in 2.4.0, but maybe there are some improvements we can make there to restore hash write performance.
-- Hash read and class initialization perf has been slowly getting worse. It doesn't look significant due to Ruby 0/1 perf in the graphs, but class initialization for example was measured at around 90-110 ms for several versions in Ruby 2.x, but >125ms for 3.0.1 and 3.0.2 which amounts to a 25% slowdown in some cases. There may be a regression here that can be improved.
+- Hash write and class initialization perf has been slowly getting worse. It doesn't look significant due to Ruby 0/1 perf in the graphs, but class initialization for example was measured at around 90-110 ms for several versions in Ruby 2.x, but >125ms for 3.0.1 and 3.0.2 which amounts to a 25% slowdown in some cases. There may be a regression here that can be improved.
 
 # Notes
 
