@@ -21,7 +21,7 @@ Note that this process takes a long time. It took around 6 hours on my VM.
 One of the biggest challenges in writing the benchmarks was trying to create benchmarks that would run on all versions of Ruby between 0.49 and 3.0.2. The language has changed a lot in this time! Some neat things I learned:
 
 - `puts` didn't exist originally, so I had to use `print` and `printf`.
-- Methods used to need to be invoked with parenthesis, even when there were no methods.
+- Methods used to need to be invoked with parenthesis, even when there were no args.
 - Iterators and blocks didn't exist originally, so I iterated using a while loop.
 - There wasn't a way (that I could find) to get ms-precise time in Ruby.
 
